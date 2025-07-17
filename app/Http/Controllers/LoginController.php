@@ -21,10 +21,7 @@ class LoginController extends Controller
             ->first();
 
         if (!Hash::check($request->input('password'), $user->password)){
-            return back()
-                ->withErrors([
-                    'general' => 'اشتباه'
-                ]);
+            return backWithError('اشتباه');
         }
         Auth::guard('user')->login($user);
         return redirect()->route('dashboard.index');

@@ -1,6 +1,10 @@
 @extends('layout.app')
 
 @section('content')
+    <div>
+        <img width="100px" src="{{asset('assets/images/pngtree-transparent-register-now-banner-design-png-image_8971123.png')}}" alt="">
+
+    </div>
     <form class="row g-3 needs-validation" novalidate action="{{route('auth.register.post')}}" method="post">
 
         @csrf
