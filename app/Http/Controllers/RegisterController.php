@@ -17,7 +17,7 @@ class RegisterController extends Controller
 
     public function index()
     {
-
+//        dd(trimUp('sana'));
 //        try {
 //            $this->test(11);
 //        } catch (NotFoundException) {
@@ -51,10 +51,7 @@ class RegisterController extends Controller
             Log::channel('custom-log')->info('ثبت', $input);
         } catch (Exception $exception) {
             Log::error($exception);
-            return back()
-                ->withErrors([
-                    'general' => 'اشتباه'
-                ]);
+            return backWithError('اشتباه');
         }
 
         return redirect()->route('auth.login.index');
